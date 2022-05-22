@@ -4,6 +4,18 @@ import { rows } from "./TableData";
 import { Box, Grid, Typography } from "@mui/material";
 
 export const ResponsiveTable = () => {
+  const rowHeader = (name: string) => (
+    <Typography
+      variant="body2"
+      sx={{
+        display: { xs: "flex", sm: "block" },
+        justifyContent: { xs: "center", sm: "start" },
+      }}
+    >
+      {name}
+    </Typography>
+  );
+
   return (
     <Box component={Paper}>
       <Box
@@ -33,7 +45,7 @@ export const ResponsiveTable = () => {
         {rows.map((row) => (
           <React.Fragment key={row.name}>
             <Grid item xs={12} sm={4}>
-              <Typography variant="body2">{row.name}</Typography>
+              {rowHeader(row.name)}
             </Grid>
             <Grid item xs={12} sm={2}>
               <Box
