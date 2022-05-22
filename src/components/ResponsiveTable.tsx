@@ -23,11 +23,29 @@ export const ResponsiveTable = () => {
           display: { xs: "block", sm: "none" },
         }}
       >
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Typography variant="body2">{columHeader}</Typography>
-          <Typography variant="body2">&nbsp;:&nbsp;</Typography>
-          <Typography variant="body2">{value}</Typography>
-        </Box>
+        <Grid container>
+          <Grid item xs={6}>
+            <Typography
+              variant="body2"
+              align="right"
+            >
+              {columHeader}
+            </Typography>
+          </Grid>
+          <Grid item xs={1}>
+            <Typography variant="body2" align="center">
+              :
+            </Typography>
+          </Grid>
+          <Grid item xs={5}>
+            <Typography
+              variant="body2"
+              align="left"
+            >
+              {value}
+            </Typography>
+          </Grid>
+        </Grid>
       </Box>
       <Box
         sx={{
