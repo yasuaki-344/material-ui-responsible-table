@@ -25,17 +25,17 @@ export const ResponsiveTable = () => {
       >
         <Grid container>
           <Grid item xs={6}>
-            <Typography variant="body2" align="right">
+            <Typography gutterBottom variant="body2" align="right">
               {columHeader}
             </Typography>
           </Grid>
           <Grid item xs={1}>
-            <Typography variant="body2" align="center">
+            <Typography gutterBottom variant="body2" align="center">
               :
             </Typography>
           </Grid>
           <Grid item xs={5}>
-            <Typography variant="body2" align="left">
+            <Typography gutterBottom variant="body2" align="left">
               {value}
             </Typography>
           </Grid>
@@ -59,21 +59,31 @@ export const ResponsiveTable = () => {
           borderBottom: "0.1pt solid #e0e0e0",
         }}
       >
-        <Grid container spacing={2} paddingX={2}>
+        <Grid container spacing={2} paddingX={2} marginBottom={1}>
           <Grid item sm={4}>
-            <Typography variant="body2">Dessert (100g serving)</Typography>
+            <Typography gutterBottom variant="body2">
+              Dessert (100g serving)
+            </Typography>
           </Grid>
           <Grid item sm={2}>
-            <Typography variant="body2">Calories</Typography>
+            <Typography gutterBottom variant="body2">
+              Calories
+            </Typography>
           </Grid>
           <Grid item sm={2}>
-            <Typography variant="body2">Fat&nbsp;(g)</Typography>
+            <Typography gutterBottom variant="body2">
+              Fat&nbsp;(g)
+            </Typography>
           </Grid>
           <Grid item sm={2}>
-            <Typography variant="body2">Carbs&nbsp;(g)</Typography>
+            <Typography gutterBottom variant="body2">
+              Carbs&nbsp;(g)
+            </Typography>
           </Grid>
           <Grid item sm={2}>
-            <Typography variant="body2">Protein&nbsp;(g)</Typography>
+            <Typography gutterBottom variant="body2">
+              Protein&nbsp;(g)
+            </Typography>
           </Grid>
         </Grid>
       </Box>
@@ -87,6 +97,7 @@ export const ResponsiveTable = () => {
               sx={{
                 borderBottom: "0.1pt solid #e0e0e0",
               }}
+              paddingBottom={1}
             >
               {rowHeader(row.name)}
             </Grid>
@@ -97,6 +108,7 @@ export const ResponsiveTable = () => {
               sx={{
                 borderBottom: "0.1pt solid #e0e0e0",
               }}
+              paddingBottom={1}
             >
               {rowItem("Calories", row.calories)}
             </Grid>
@@ -107,6 +119,7 @@ export const ResponsiveTable = () => {
               sx={{
                 borderBottom: "0.1pt solid #e0e0e0",
               }}
+              paddingBottom={1}
             >
               {rowItem("Fat (g)", row.fat)}
             </Grid>
@@ -117,6 +130,7 @@ export const ResponsiveTable = () => {
               sx={{
                 borderBottom: "0.1pt solid #e0e0e0",
               }}
+              paddingBottom={1}
             >
               {rowItem("Carbs (g)", row.carbs)}
             </Grid>
@@ -127,6 +141,7 @@ export const ResponsiveTable = () => {
               sx={{
                 borderBottom: "0.1pt solid #e0e0e0",
               }}
+              paddingBottom={1}
             >
               {rowItem("Protein (g)", row.protein)}
             </Grid>
