@@ -25,10 +25,7 @@ export const ResponsiveTable = () => {
       >
         <Grid container>
           <Grid item xs={6}>
-            <Typography
-              variant="body2"
-              align="right"
-            >
+            <Typography variant="body2" align="right">
               {columHeader}
             </Typography>
           </Grid>
@@ -38,10 +35,7 @@ export const ResponsiveTable = () => {
             </Typography>
           </Grid>
           <Grid item xs={5}>
-            <Typography
-              variant="body2"
-              align="left"
-            >
+            <Typography variant="body2" align="left">
               {value}
             </Typography>
           </Grid>
@@ -62,9 +56,10 @@ export const ResponsiveTable = () => {
       <Box
         sx={{
           display: { xs: "none", sm: "block" },
+          borderBottom: "0.1pt solid #e0e0e0",
         }}
       >
-        <Grid container spacing={2} padding={2}>
+        <Grid container spacing={2} paddingX={2}>
           <Grid item sm={4}>
             <Typography variant="body2">Dessert (100g serving)</Typography>
           </Grid>
@@ -85,19 +80,54 @@ export const ResponsiveTable = () => {
       <Grid container spacing={2} padding={2}>
         {rows.map((row) => (
           <React.Fragment key={row.name}>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              sx={{
+                borderBottom: "0.1pt solid #e0e0e0",
+              }}
+            >
               {rowHeader(row.name)}
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                borderBottom: "0.1pt solid #e0e0e0",
+              }}
+            >
               {rowItem("Calories", row.calories)}
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                borderBottom: "0.1pt solid #e0e0e0",
+              }}
+            >
               {rowItem("Fat (g)", row.fat)}
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                borderBottom: "0.1pt solid #e0e0e0",
+              }}
+            >
               {rowItem("Carbs (g)", row.carbs)}
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                borderBottom: "0.1pt solid #e0e0e0",
+              }}
+            >
               {rowItem("Protein (g)", row.protein)}
             </Grid>
           </React.Fragment>
