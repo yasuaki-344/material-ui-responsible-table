@@ -46,7 +46,7 @@ export const ResponsiveTable = () => {
           display: { xs: "none", sm: "block" },
         }}
       >
-        <Typography variant="body2">{value}</Typography>
+        <Typography gutterBottom variant="body2">{value}</Typography>
       </Box>
     </>
   );
