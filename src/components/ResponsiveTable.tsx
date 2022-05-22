@@ -16,6 +16,29 @@ export const ResponsiveTable = () => {
     </Typography>
   );
 
+  const rowItem = (columHeader: string, value: any) => (
+    <>
+      <Box
+        sx={{
+          display: { xs: "block", sm: "none" },
+        }}
+      >
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Typography variant="body2">{columHeader}</Typography>
+          <Typography variant="body2">&nbsp;:&nbsp;</Typography>
+          <Typography variant="body2">{value}</Typography>
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          display: { xs: "none", sm: "block" },
+        }}
+      >
+        <Typography variant="body2">{value}</Typography>
+      </Box>
+    </>
+  );
+
   return (
     <Box component={Paper}>
       <Box
@@ -48,72 +71,16 @@ export const ResponsiveTable = () => {
               {rowHeader(row.name)}
             </Grid>
             <Grid item xs={12} sm={2}>
-              <Box
-                sx={{
-                  display: { xs: "block", sm: "none" },
-                }}
-              >
-                <Typography variant="body2">Calories:{row.calories}</Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: { xs: "none", sm: "block" },
-                }}
-              >
-                <Typography variant="body2">{row.calories}</Typography>
-              </Box>
+              {rowItem("Calories", row.calories)}
             </Grid>
             <Grid item xs={12} sm={2}>
-              <Box
-                sx={{
-                  display: { xs: "block", sm: "none" },
-                }}
-              >
-                <Typography variant="body2">Fat&nbsp;(g):{row.fat}</Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: { xs: "none", sm: "block" },
-                }}
-              >
-                <Typography variant="body2">{row.fat}</Typography>
-              </Box>
+              {rowItem("Fat (g)", row.fat)}
             </Grid>
             <Grid item xs={12} sm={2}>
-              <Box
-                sx={{
-                  display: { xs: "block", sm: "none" },
-                }}
-              >
-                <Typography variant="body2">
-                  Carbs&nbsp;(g):{row.carbs}
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: { xs: "none", sm: "block" },
-                }}
-              >
-                <Typography variant="body2">{row.carbs}</Typography>
-              </Box>
+              {rowItem("Carbs (g)", row.carbs)}
             </Grid>
             <Grid item xs={12} sm={2}>
-              <Box
-                sx={{
-                  display: { xs: "block", sm: "none" },
-                }}
-              >
-                <Typography variant="body2">
-                  Protein&nbsp;(g):{row.protein}
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: { xs: "none", sm: "block" },
-                }}
-              >
-                <Typography variant="body2">{row.protein}</Typography>
-              </Box>
+              {rowItem("Protein (g)", row.protein)}
             </Grid>
           </React.Fragment>
         ))}
