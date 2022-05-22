@@ -32,19 +32,19 @@ export const ResponsiveTable = () => {
       <Grid container margin={2}>
         {rows.map((row) => (
           <React.Fragment key={row.name}>
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={4}>
               <Typography variant="body2">{row.name}</Typography>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={12} sm={2}>
               <Typography variant="body2">{row.calories}</Typography>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={12} sm={2}>
               <Typography variant="body2">{row.fat}</Typography>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={12} sm={2}>
               <Typography variant="body2">{row.carbs}</Typography>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={12} sm={2}>
               <Typography variant="body2">{row.protein}</Typography>
             </Grid>
           </React.Fragment>
