@@ -59,7 +59,12 @@ export const ResponsiveTable = () => {
           borderBottom: "0.1pt solid #e0e0e0",
         }}
       >
-        <Grid container spacing={2} paddingX={2} marginBottom={1}>
+        <Grid
+          container
+          spacing={2}
+          paddingX={2}
+          marginBottom={1}
+        >
           <Grid item sm={4}>
             <Typography gutterBottom variant="body2">
               Dessert (100g serving)
