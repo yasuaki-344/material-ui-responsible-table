@@ -39,16 +39,14 @@ export const ResponsiveTable = () => {
         </Grid>
       </Grid>
     ) : (
-      <Typography variant="body2">
-        {value}
-      </Typography>
+      <Typography variant="body2">{value}</Typography>
     );
 
   const rowStyle = {
     borderBottom: "0.1pt solid #e0e0e0",
   };
   const endRowStyle = {
-    borderBottom: "0.0pt solid #e0e0e0",
+    borderBottom: { xs: "1.0pt solid #e0e0e0", sm: "0.0pt solid #e0e0e0" },
   };
   const boundary = rows.length - 1;
 
@@ -62,29 +60,19 @@ export const ResponsiveTable = () => {
       >
         <Grid container>
           <Grid item sm={4} paddingX={2} paddingY={1}>
-            <Typography variant="body2">
-              Dessert (100g serving)
-            </Typography>
+            <Typography variant="body2">Dessert (100g serving)</Typography>
           </Grid>
           <Grid item sm={2} paddingX={2} paddingY={1}>
-            <Typography variant="body2">
-              Calories
-            </Typography>
+            <Typography variant="body2">Calories</Typography>
           </Grid>
           <Grid item sm={2} paddingX={2} paddingY={1}>
-            <Typography variant="body2">
-              Fat&nbsp;(g)
-            </Typography>
+            <Typography variant="body2">Fat&nbsp;(g)</Typography>
           </Grid>
           <Grid item sm={2} paddingX={2} paddingY={1}>
-            <Typography variant="body2">
-              Carbs&nbsp;(g)
-            </Typography>
+            <Typography variant="body2">Carbs&nbsp;(g)</Typography>
           </Grid>
           <Grid item sm={2} paddingX={2} paddingY={1}>
-            <Typography variant="body2">
-              Protein&nbsp;(g)
-            </Typography>
+            <Typography variant="body2">Protein&nbsp;(g)</Typography>
           </Grid>
         </Grid>
       </Box>
