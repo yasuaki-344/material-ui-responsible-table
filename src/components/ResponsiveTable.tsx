@@ -52,7 +52,7 @@ export const ResponsiveTable = () => {
   );
 
   return (
-    <Box component={Paper}>
+    <Box component={Paper} elevation={2}>
       <Box
         sx={{
           display: { xs: "none", sm: "block" },

@@ -3,9 +3,9 @@ import React from "react";
 import "./App.css";
 import { BasicTable, ResponsiveTable } from "./components";
 
-function App() {
+const App = () => {
   return (
-    <Grid container spacing={1} margin={1}>
+    <Grid container padding={1} spacing={5}>
       <Grid item xs={12}>
         <BasicTable />
       </Grid>
@@ -14,6 +14,6 @@ function App() {
       </Grid>
     </Grid>
   );
-}
+};
 
 export default App;
