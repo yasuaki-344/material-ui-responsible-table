@@ -23,23 +23,23 @@ export const ResponsiveTable = () => {
     isMobile ? (
       <Grid container>
         <Grid item xs={6}>
-          <Typography gutterBottom variant="body2" align="right">
+          <Typography variant="body2" align="right">
             {columHeader}
           </Typography>
         </Grid>
         <Grid item xs={1}>
-          <Typography gutterBottom variant="body2" align="center">
+          <Typography variant="body2" align="center">
             :
           </Typography>
         </Grid>
         <Grid item xs={5}>
-          <Typography gutterBottom variant="body2" align="left">
+          <Typography variant="body2" align="left">
             {value}
           </Typography>
         </Grid>
       </Grid>
     ) : (
-      <Typography gutterBottom variant="body2">
+      <Typography variant="body2">
         {value}
       </Typography>
     );
@@ -60,35 +60,35 @@ export const ResponsiveTable = () => {
           borderBottom: "0.1pt solid #e0e0e0",
         }}
       >
-        <Grid container spacing={2} paddingX={2} marginBottom={1}>
-          <Grid item sm={4}>
-            <Typography gutterBottom variant="body2">
+        <Grid container>
+          <Grid item sm={4} paddingX={2} paddingY={1}>
+            <Typography variant="body2">
               Dessert (100g serving)
             </Typography>
           </Grid>
-          <Grid item sm={2}>
-            <Typography gutterBottom variant="body2">
+          <Grid item sm={2} paddingX={2} paddingY={1}>
+            <Typography variant="body2">
               Calories
             </Typography>
           </Grid>
-          <Grid item sm={2}>
-            <Typography gutterBottom variant="body2">
+          <Grid item sm={2} paddingX={2} paddingY={1}>
+            <Typography variant="body2">
               Fat&nbsp;(g)
             </Typography>
           </Grid>
-          <Grid item sm={2}>
-            <Typography gutterBottom variant="body2">
+          <Grid item sm={2} paddingX={2} paddingY={1}>
+            <Typography variant="body2">
               Carbs&nbsp;(g)
             </Typography>
           </Grid>
-          <Grid item sm={2}>
-            <Typography gutterBottom variant="body2">
+          <Grid item sm={2} paddingX={2} paddingY={1}>
+            <Typography variant="body2">
               Protein&nbsp;(g)
             </Typography>
           </Grid>
         </Grid>
       </Box>
-      <Grid container spacing={2} padding={2}>
+      <Grid container>
         {rows.map((row, index: number) => (
           <React.Fragment key={row.name}>
             <Grid
@@ -96,7 +96,8 @@ export const ResponsiveTable = () => {
               xs={12}
               sm={4}
               sx={index < boundary ? rowStyle : endRowStyle}
-              paddingBottom={1}
+              paddingX={2}
+              paddingY={1}
             >
               {rowHeader(row.name)}
             </Grid>
@@ -105,7 +106,8 @@ export const ResponsiveTable = () => {
               xs={12}
               sm={2}
               sx={index < boundary ? rowStyle : endRowStyle}
-              paddingBottom={1}
+              paddingX={2}
+              paddingY={1}
             >
               {rowItem("Calories", row.calories)}
             </Grid>
@@ -114,7 +116,8 @@ export const ResponsiveTable = () => {
               xs={12}
               sm={2}
               sx={index < boundary ? rowStyle : endRowStyle}
-              paddingBottom={1}
+              paddingX={2}
+              paddingY={1}
             >
               {rowItem("Fat (g)", row.fat)}
             </Grid>
@@ -123,7 +126,8 @@ export const ResponsiveTable = () => {
               xs={12}
               sm={2}
               sx={index < boundary ? rowStyle : endRowStyle}
-              paddingBottom={1}
+              paddingX={2}
+              paddingY={1}
             >
               {rowItem("Carbs (g)", row.carbs)}
             </Grid>
@@ -132,7 +136,8 @@ export const ResponsiveTable = () => {
               xs={12}
               sm={2}
               sx={index < boundary ? rowStyle : endRowStyle}
-              paddingBottom={1}
+              paddingX={2}
+              paddingY={1}
             >
               {rowItem("Protein (g)", row.protein)}
             </Grid>

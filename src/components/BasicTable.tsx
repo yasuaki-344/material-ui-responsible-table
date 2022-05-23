@@ -11,7 +11,7 @@ import { rows } from "./TableData";
 export const BasicTable = () => {
   return (
     <TableContainer component={Paper}>
-      <Table aria-label="simple table">
+      <Table aria-label="simple table" size="small">
         <TableHead>
           <TableRow>
             <TableCell>Dessert (100g serving)</TableCell>
