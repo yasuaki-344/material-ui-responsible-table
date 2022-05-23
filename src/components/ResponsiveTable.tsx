@@ -1,9 +1,18 @@
 import * as React from "react";
 import Paper from "@mui/material/Paper";
 import { rows } from "./TableData";
-import { Box, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 export const ResponsiveTable = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const rowHeader = (name: string) => (
     <Typography
       variant="body2"
@@ -16,40 +25,30 @@ export const ResponsiveTable = () => {
     </Typography>
   );
 
-  const rowItem = (columHeader: string, value: any) => (
-    <>
-      <Box
-        sx={{
-          display: { xs: "block", sm: "none" },
-        }}
-      >
-        <Grid container>
-          <Grid item xs={6}>
-            <Typography gutterBottom variant="body2" align="right">
-              {columHeader}
-            </Typography>
-          </Grid>
-          <Grid item xs={1}>
-            <Typography gutterBottom variant="body2" align="center">
-              :
-            </Typography>
-          </Grid>
-          <Grid item xs={5}>
-            <Typography gutterBottom variant="body2" align="left">
-              {value}
-            </Typography>
-          </Grid>
+  const rowItem = (columHeader: string, value: any) =>
+    isMobile ? (
+      <Grid container>
+        <Grid item xs={6}>
+          <Typography gutterBottom variant="body2" align="right">
+            {columHeader}
+          </Typography>
         </Grid>
-      </Box>
-      <Box
-        sx={{
-          display: { xs: "none", sm: "block" },
-        }}
-      >
-        <Typography gutterBottom variant="body2">{value}</Typography>
-      </Box>
-    </>
-  );
+        <Grid item xs={1}>
+          <Typography gutterBottom variant="body2" align="center">
+            :
+          </Typography>
+        </Grid>
+        <Grid item xs={5}>
+          <Typography gutterBottom variant="body2" align="left">
+            {value}
+          </Typography>
+        </Grid>
+      </Grid>
+    ) : (
+      <Typography gutterBottom variant="body2">
+        {value}
+      </Typography>
+    );
 
   return (
     <Box component={Paper} elevation={2}>
@@ -59,12 +58,7 @@ export const ResponsiveTable = () => {
           borderBottom: "0.1pt solid #e0e0e0",
         }}
       >
-        <Grid
-          container
-          spacing={2}
-          paddingX={2}
-          marginBottom={1}
-        >
+        <Grid container spacing={2} paddingX={2} marginBottom={1}>
           <Grid item sm={4}>
             <Typography gutterBottom variant="body2">
               Dessert (100g serving)
