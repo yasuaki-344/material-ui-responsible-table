@@ -1,13 +1,16 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import "./App.css";
-import { BasicTable, ResponsiveTable } from "./components";
+import { BasicTable, MyComponent, ResponsiveTable } from "./components";
 
 const App = () => {
   return (
     <Grid container padding={1} spacing={5}>
       <Grid item xs={12}>
         <BasicTable />
+      </Grid>
+      <Grid item xs={12}>
+        <MyComponent />
       </Grid>
       <Grid item xs={12}>
         <ResponsiveTable />
