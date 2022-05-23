@@ -1,13 +1,7 @@
 import * as React from "react";
 import Paper from "@mui/material/Paper";
 import { rows } from "./TableData";
-import {
-  Box,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 export const ResponsiveTable = () => {
   const theme = useTheme();
@@ -50,6 +44,14 @@ export const ResponsiveTable = () => {
       </Typography>
     );
 
+  const rowStyle = {
+    borderBottom: "0.1pt solid #e0e0e0",
+  };
+  const endRowStyle = {
+    borderBottom: "0.0pt solid #e0e0e0",
+  };
+  const boundary = rows.length - 1;
+
   return (
     <Box component={Paper} elevation={2}>
       <Box
@@ -87,15 +89,13 @@ export const ResponsiveTable = () => {
         </Grid>
       </Box>
       <Grid container spacing={2} padding={2}>
-        {rows.map((row) => (
+        {rows.map((row, index: number) => (
           <React.Fragment key={row.name}>
             <Grid
               item
               xs={12}
               sm={4}
-              sx={{
-                borderBottom: "0.1pt solid #e0e0e0",
-              }}
+              sx={index < boundary ? rowStyle : endRowStyle}
               paddingBottom={1}
             >
               {rowHeader(row.name)}
@@ -104,9 +104,7 @@ export const ResponsiveTable = () => {
               item
               xs={12}
               sm={2}
-              sx={{
-                borderBottom: "0.1pt solid #e0e0e0",
-              }}
+              sx={index < boundary ? rowStyle : endRowStyle}
               paddingBottom={1}
             >
               {rowItem("Calories", row.calories)}
@@ -115,9 +113,7 @@ export const ResponsiveTable = () => {
               item
               xs={12}
               sm={2}
-              sx={{
-                borderBottom: "0.1pt solid #e0e0e0",
-              }}
+              sx={index < boundary ? rowStyle : endRowStyle}
               paddingBottom={1}
             >
               {rowItem("Fat (g)", row.fat)}
@@ -126,9 +122,7 @@ export const ResponsiveTable = () => {
               item
               xs={12}
               sm={2}
-              sx={{
-                borderBottom: "0.1pt solid #e0e0e0",
-              }}
+              sx={index < boundary ? rowStyle : endRowStyle}
               paddingBottom={1}
             >
               {rowItem("Carbs (g)", row.carbs)}
@@ -137,9 +131,7 @@ export const ResponsiveTable = () => {
               item
               xs={12}
               sm={2}
-              sx={{
-                borderBottom: "0.1pt solid #e0e0e0",
-              }}
+              sx={index < boundary ? rowStyle : endRowStyle}
               paddingBottom={1}
             >
               {rowItem("Protein (g)", row.protein)}
